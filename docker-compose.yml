@@ -32,7 +32,7 @@ services:
       - VIRTUAL_HOST=odoo, odoochat
       - VIRTUAL_NETWORK=nginx-proxy
       - VIRTUAL_PORT=8069, 8072
-      - LETSENCRYPT_HOST=eazyerp.co
+      - LETSENCRYPT_HOST=erps.ltd
       - LETSENCRYPT_EMAIL=mytalent.me@gmail.com
     volumes:
       #- /etc/timezone:/etc/timezone:ro
