@@ -39,12 +39,12 @@ services:
 
   web:
     restart: always
-    image: odoo:11
+    image: odoo:14
     container_name: odoo
     depends_on:
       - db
     ports:
-      - "8069:8069"
+      - "8068:8069"
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
@@ -53,14 +53,14 @@ services:
       - VIRTUAL_HOST=odoo, odoochat
       - VIRTUAL_NETWORK=nginx-proxy
       - VIRTUAL_PORT=8069, 8072
-      - LETSENCRYPT_HOST=samplewebsite.example.com
-      - LETSENCRYPT_EMAIL=test@example.com
+      - LETSENCRYPT_HOST=erps.ltd
+      - LETSENCRYPT_EMAIL=mytalen.me@gmail.com
   db:
     restart: always
-    image: postgres:9.6
+    image: postgres:13
     environment:
-      - POSTGRES_PASSWORD=sample_password
-      - POSTGRES_USER=sample_user
+      - POSTGRES_PASSWORD=odoome
+      - POSTGRES_USER=odoome
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - odoo-db-data:/var/lib/postgresql/data/pgdata
